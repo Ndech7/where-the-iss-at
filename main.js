@@ -16,6 +16,12 @@ async function getISSPos() {
   const data = await response.json();
   const { latitude, longitude } = data;
   marker.setLatLng([latitude, longitude]).addTo(map);
+  document.getElementById("lat").textContent = `Latitude: ${latitude.toFixed(
+    2
+  )}°`;
+  document.getElementById("lon").textContent = `Longitude: ${longitude.toFixed(
+    2
+  )}°`;
 }
 
 setInterval(getISSPos, 5000);
