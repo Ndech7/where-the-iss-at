@@ -17,3 +17,5 @@ async function getISSPos() {
   const { latitude, longitude } = data;
   marker.setLatLng([latitude, longitude]).addTo(map);
 }
+
+setInterval(getISSPos, 5000);
